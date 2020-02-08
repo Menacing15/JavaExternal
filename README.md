@@ -5,3 +5,4 @@
 ### Links
 * Task 0: [Create repository](https://github.com/Menacing15/JavaExternal).
 * Task 1: [Teamed poem writting](https://github.com/Menacing15/JavaExternal02)
+* Task 2: [MVC gaming java](https://github.com/Menacing15/javaexternal/tree/master/src/ua/javaextern/aleksandr/mvctask)
