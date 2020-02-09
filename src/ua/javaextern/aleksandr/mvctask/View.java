@@ -1,5 +1,6 @@
 package ua.javaextern.aleksandr.mvctask;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class View {
@@ -8,7 +9,12 @@ public class View {
     }
 
     public int read() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        try {
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextInt();
+        }catch(InputMismatchException ex){
+            System.out.println("Dummy, you need a number...");
+            return read();
+        }
     }
 }
