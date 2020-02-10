@@ -14,13 +14,13 @@ public class Controller {
 
     public void run(int min, int max, int attempts){
         view.type(String.format("Hi! Let's try a game. " +
-                "You have %d attempts to guess a number from %d to %d. " + "Type your number!",attempts , min, max));
+                "You have %d attempts to guess a number from %d to %d. Type your number!",attempts , min, max));
 
         int magicNumber = model.rand(min,max);
         boolean isGuessed = false;
         model.createLog(attempts);
 
-        for(int attemptCount = 0; attemptCount < 10; attemptCount++){
+        for(int attemptCount = 0; attemptCount < attempts; attemptCount++){
             int typedNumber = view.read();
 
             if(typedNumber == magicNumber){
@@ -53,7 +53,7 @@ public class Controller {
     }
 
     private void printStats(){
-        if(model.getLog().length == 10){
+        if(model.getLog().length == model.getLogLengthPrimal()){
             view.type("Pathetic defeat...");
         }else {
             view.type("Amazing victory!");

@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Model {
 
     private int [] log;
+    private int logLengthPrimal;
 
     public int rand(int min, int max){
         if(min > max){
@@ -18,6 +19,7 @@ public class Model {
 
     public void createLog(int length){
        log = new int[length];
+       logLengthPrimal = length;
     }
 
     public void logData(int place, int number){
@@ -26,8 +28,8 @@ public class Model {
     public int[] getLog(){
         return log;
     }
-
     public void updateLog(int attemptsCount){
         log = Arrays.copyOf(log,attemptsCount);
     }
+    public int getLogLengthPrimal(){return logLengthPrimal;}
 }
