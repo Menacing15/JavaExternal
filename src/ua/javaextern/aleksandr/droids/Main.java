@@ -13,5 +13,9 @@ public class Main {
         batDroid.defend("chest");
         pizzaDroid.attack(batDroid,"chest");
 
+        batDroid.defend("head");
+        pizzaDroid.attack(batDroid,"legs");
+
+        batDroid.powerup();
     }
 }

@@ -57,9 +57,10 @@ public abstract class Droid {
     }
 
     public void powerup(){
-        System.out.println("finally, some good ******* food");
+        System.out.println("finally, some good food");
         armorValue = armorValue + 150;
         healthValue = healthValue + 150;
+        System.out.println(name + " has now health: " + healthValue + " armor: " + armorValue);
     }
 
 }
