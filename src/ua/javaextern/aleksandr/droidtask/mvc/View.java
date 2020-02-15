@@ -17,11 +17,13 @@ public class View {
     private static final String NEXT_LINE = "\n";
 
     private static final String GREETINGS = "input.greetings";
+    private static final String SECOND_NUMBER_REQUEST = "input.number.request";
     private static final String DROIDS_LIST = "input.droid.list";
     private static final String DROID_NAMES_ANNOUNCEMENT = "input.names.announcement";
     private static final String DROID_ATTACK_MOVE = "input.attack.move";
     private static final String DROID_PARAMETERS = "input.droid.parameters";
-    private static final String SECOND_NUMBER_REQUEST = "input.number.request";
+    private static final String END_BATTLE = "input.battle.end";
+
 
     public void print(String message){
         System.out.println(message);
@@ -29,6 +31,10 @@ public class View {
 
     public void printGreetings(){
         print(bundle.getString(GREETINGS));
+    }
+
+    public void printSecondNumberRequest(){
+        print(bundle.getString(SECOND_NUMBER_REQUEST));
     }
 
     public void printDroidList(){
@@ -44,12 +50,12 @@ public class View {
     public void printAttackMove(Droid droid){
         print(droid.getName() + SPACE_SIGN + bundle.getString(DROID_ATTACK_MOVE));
     }
-
     public void printDroidParameters(Droid droid){
         print(droid.getName() + SPACE_SIGN + bundle.getString(DROID_PARAMETERS) + SPACE_SIGN +
                 droid.getArmorValue() + SPACE_SIGN + droid.getHealthValue());
     }
-    public void printSecondNumberRequest(){
-        print(bundle.getString(SECOND_NUMBER_REQUEST));
+
+    public void printEndBattle(Droid droid){
+        print(bundle.getString(END_BATTLE) + SPACE_SIGN + droid.getName());
     }
 }

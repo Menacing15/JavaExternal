@@ -19,7 +19,7 @@ public abstract class Droid {
     abstract void work();
     abstract void speak();
 
-    public void attackMovement(Droid droid) {
+    public void attack(Droid droid) {
         if (droid.armorValue > 0) {
             droid.armorValue = droid.armorValue - attackValue / 2;
         } else {

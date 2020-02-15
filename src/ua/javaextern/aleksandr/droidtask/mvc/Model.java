@@ -26,13 +26,27 @@ public class Model {
         }
     }
 
-    public Droid pickRandomAttackingDroidAndAttack(Droid firstFighter, Droid secondFighter) {
+    public Droid getRandomAttackingDroid(Droid firstFighter, Droid secondFighter) {
         int fortuitousMotion = new Random().nextInt() % 2;
         if(fortuitousMotion == 0){
-            firstFighter.attackMovement(secondFighter);
             return firstFighter;
         }else{
-            secondFighter.attackMovement(firstFighter);
+            return secondFighter;
+        }
+    }
+
+    public Droid getDefendingDroid(Droid attackingDroid, Droid firstFighter, Droid secondFighter) {
+        if(attackingDroid.equals(firstFighter)){
+            return secondFighter;
+        }else{
+            return firstFighter;
+        }
+    }
+
+    public Droid getWinnerDroid(Droid firstFighter, Droid secondFighter){
+        if(firstFighter.getHealthValue() > 0){
+            return firstFighter;
+        }else{
             return secondFighter;
         }
     }

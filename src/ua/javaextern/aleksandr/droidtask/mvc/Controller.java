@@ -26,16 +26,20 @@ public class Controller {
         view.printChosenDroidNames(firstFighter,secondFighter);
 
         while(firstFighter.isAlive() && secondFighter.isAlive()){
-            Droid attackingDroid = model.pickRandomAttackingDroidAndAttack(firstFighter, secondFighter);
+            Droid attackingDroid = model.getRandomAttackingDroid(firstFighter, secondFighter);
+            Droid defendingDroid = model.getDefendingDroid(attackingDroid, firstFighter, secondFighter);
+            attackingDroid.attack(defendingDroid);
             view.printAttackMove(attackingDroid);
             view.printDroidParameters(firstFighter);
             view.printDroidParameters(secondFighter);
             view.print("\n");
             try {
-                Thread.sleep(5000);
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        Droid winnerDroid = model.getWinnerDroid(firstFighter, secondFighter);
+        view.printEndBattle(winnerDroid);
     }
 }
