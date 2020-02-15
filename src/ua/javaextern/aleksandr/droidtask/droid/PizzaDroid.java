@@ -1,9 +1,9 @@
-package ua.javaextern.aleksandr.droids;
+package ua.javaextern.aleksandr.droidtask.droid;
 
 public class PizzaDroid extends Droid{
 
-    public PizzaDroid(String name,int attack, int armor, int health, String defPos) {
-        super(name, attack, armor, health,defPos);
+    public PizzaDroid(String name,int attack, int armor, int health) {
+        super(name, attack, armor, health);
     }
 
     @Override
