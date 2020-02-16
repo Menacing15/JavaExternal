@@ -28,7 +28,7 @@ public class Controller {
         while(firstFighter.isAlive() && secondFighter.isAlive()){
             Droid attackingDroid = model.getRandomAttackingDroid(firstFighter, secondFighter);
             Droid defendingDroid = model.getDefendingDroid(attackingDroid, firstFighter, secondFighter);
-            attackingDroid.attack(defendingDroid);
+            attackingDroid.attackMove(defendingDroid);
             view.printAttackMove(attackingDroid);
             view.printDroidParameters(firstFighter);
             view.printDroidParameters(secondFighter);

@@ -20,7 +20,7 @@ public abstract class Droid {
 
     abstract void speak();
 
-    public void attack(Droid droid) {
+    public void attackMove(Droid droid) {
         this.attackStrategy.attack(droid,attackValue);
     }
 
@@ -37,7 +37,7 @@ public abstract class Droid {
         return healthValue;
     }
     public void setHealthValue(int newValue) {
-        armorValue = newValue;
+        healthValue = newValue;
     }
     public String getName() {
         return name;
