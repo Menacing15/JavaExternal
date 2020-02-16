@@ -1,19 +1,11 @@
 package ua.javaextern.aleksandr.droidtask.droid;
 
+import ua.javaextern.aleksandr.droidtask.strategy.SimpleAttackStrategy;
+
 public class PizzaDroid extends Droid{
 
     public PizzaDroid(String name,int attack, int armor, int health) {
-        super(name, attack, armor, health);
-    }
-
-    @Override
-    void move() {
-        System.out.println("Using my small wheels...");
-    }
-
-    @Override
-    void work() {
-        System.out.println("Making pizza...");
+        super(name, attack, armor, health, new SimpleAttackStrategy());
     }
 
     @Override

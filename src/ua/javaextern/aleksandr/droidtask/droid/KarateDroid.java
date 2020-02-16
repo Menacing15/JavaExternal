@@ -1,18 +1,11 @@
 package ua.javaextern.aleksandr.droidtask.droid;
 
+import ua.javaextern.aleksandr.droidtask.strategy.SimpleAttackStrategy;
+
 public class KarateDroid extends Droid{
 
     public KarateDroid(String name, int attack, int armor, int health) {
-        super(name, attack, armor, health);
-    }
-    @Override
-    void move() {
-        System.out.println("Running using my mechanical legs");
-    }
-
-    @Override
-    void work() {
-        System.out.println("kiaaaaa!!!!!");
+        super(name, attack, armor, health,new SimpleAttackStrategy());
     }
 
     @Override
