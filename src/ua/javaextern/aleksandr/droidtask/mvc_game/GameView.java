@@ -1,13 +1,13 @@
-package ua.javaextern.aleksandr.droidtask.mvc;
+package ua.javaextern.aleksandr.droidtask.mvc_game;
 
 import ua.javaextern.aleksandr.droidtask.droid.Droid;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class View {
+public class GameView {
 
-    private static final String MESSAGES_BUNDLE_NAME = "property/text";
+    private static final String MESSAGES_BUNDLE_NAME = "property/game_messages/text";
 
     private ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
             new Locale(""));

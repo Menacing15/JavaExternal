@@ -1,13 +1,13 @@
-package ua.javaextern.aleksandr.droidtask.mvc;
+package ua.javaextern.aleksandr.droidtask.mvc_game;
 
 import ua.javaextern.aleksandr.droidtask.droid.*;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import static ua.javaextern.aleksandr.droidtask.mvc.DroidsParameters.*;
+import static ua.javaextern.aleksandr.droidtask.mvc_game.DroidsParameters.*;
 
-public class Model {
+public class GameModel {
 
     public Droid chooseDroid(Scanner scanner){
         while(!scanner.hasNextInt()) {
