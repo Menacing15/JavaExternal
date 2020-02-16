@@ -1,5 +1,8 @@
 package ua.javaextern.aleksandr.droidtask;
 
+import ua.javaextern.aleksandr.droidtask.mvc_entrance.EntranceController;
+import ua.javaextern.aleksandr.droidtask.mvc_entrance.EntranceModel;
+import ua.javaextern.aleksandr.droidtask.mvc_entrance.EntranceView;
 import ua.javaextern.aleksandr.droidtask.mvc_game.*;
 
 import java.io.IOException;

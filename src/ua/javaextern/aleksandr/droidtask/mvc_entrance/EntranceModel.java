@@ -1,4 +1,8 @@
-package ua.javaextern.aleksandr.droidtask;
+package ua.javaextern.aleksandr.droidtask.mvc_entrance;
+
+import ua.javaextern.aleksandr.droidtask.Admin;
+import ua.javaextern.aleksandr.droidtask.Guest;
+import ua.javaextern.aleksandr.droidtask.User;
 
 import java.io.*;
 import java.net.URL;

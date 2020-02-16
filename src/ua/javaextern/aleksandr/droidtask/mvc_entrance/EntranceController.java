@@ -1,4 +1,6 @@
-package ua.javaextern.aleksandr.droidtask;
+package ua.javaextern.aleksandr.droidtask.mvc_entrance;
+
+import ua.javaextern.aleksandr.droidtask.Guest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,12 +17,15 @@ public class EntranceController {
     }
 
     public void process() throws IOException {
-        String password;
         BufferedReader terminalReader = new BufferedReader(new InputStreamReader(System.in));
+        //view.setUp();
         view.printGuestStatusRequest();
         Guest guest = model.getGuestStatus(terminalReader);
         view.printLoginPasswordRequest();
-        password = model.readInputPassword(terminalReader);
-        model.validatePassword(guest,password);
+        String password;
+        do {
+            password = model.readInputPassword(terminalReader);
+        }
+        while(!model.validatePassword(guest,password));
     }
 }
