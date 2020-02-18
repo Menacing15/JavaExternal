@@ -18,14 +18,27 @@ public class EntranceController {
 
     public void process() throws IOException {
         BufferedReader terminalReader = new BufferedReader(new InputStreamReader(System.in));
-        //view.setUp();
+        view.setUp();
         view.printGuestStatusRequest();
         Guest guest = model.getGuestStatus(terminalReader);
         view.printLoginPasswordRequest();
         String password;
-        do {
-            password = model.readInputPassword(terminalReader);
+        while(true) {
+            password = getPassword(terminalReader);
+            if (model.isPasswordValid(guest, password)) {
+                break;
+            }
+            view.printWrongPassword();
         }
-        while(!model.validatePassword(guest,password));
+
+    }
+
+    private String getPassword(BufferedReader terminalReader) throws IOException {
+        String password;
+        do {
+            password = terminalReader.readLine();
+        }
+        while (!model.checkPasswordRegularity(password));
+        return password;
     }
 }

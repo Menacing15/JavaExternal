@@ -12,7 +12,6 @@ public class Main {
         EntranceModel entranceModel = new EntranceModel();
         EntranceView entranceView = new EntranceView();
         EntranceController entranceController = new EntranceController(entranceView,entranceModel);
-
         try {
             entranceController.process();
         } catch (IOException e) {
