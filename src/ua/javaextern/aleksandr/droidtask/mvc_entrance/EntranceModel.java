@@ -27,12 +27,12 @@ public class EntranceModel {
         }
     }
 
-    public boolean validatePassword(Guest guest, String password) throws IOException {
-        URL url;
-        if(guest instanceof Admin){
-            url = getClass().getResource("admin_password.txt");
-        }else{
-            url = getClass().getResource("user_password.txt");
+    public boolean isPasswordValid(Guest guest, String password) throws IOException {
+        File file;
+        if (guest instanceof Admin) {
+            file = new File("src\\property\\terminal_messages\\admin_passwords.txt");
+        } else {
+            file = new File("src\\property\\terminal_messages\\user_passwords.txt");
         }
         fileReader = new BufferedReader(new FileReader(file.getAbsolutePath()));
         String line;

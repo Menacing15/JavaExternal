@@ -43,9 +43,11 @@ public class EntranceView {
         bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME, new Locale(LANGUAGE));
     }
 
+
     public void print(String message){
         System.out.println(message);
     }
+
     public void printGuestStatusRequest() {
         print(bundle.getString(GUEST_STATUS_REQUEST));
     }
@@ -53,7 +55,6 @@ public class EntranceView {
     public void printLoginPasswordRequest() {
         print(bundle.getString(GUEST_PASSWORD_REQUEST));
     }
-
 
     public void printWrongPassword() {
         print(bundle.getString(WRONG_PASSWORD_MESSAGE));
