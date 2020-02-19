@@ -1,6 +1,6 @@
-package ua.javaextern.aleksandr.droidtask.droid;
+package main.ua.javaextern.aleksandr.droidtask.droid;
 
-import ua.javaextern.aleksandr.droidtask.strategy.SimpleAttackStrategy;
+import main.ua.javaextern.aleksandr.droidtask.strategy.SimpleAttackStrategy;
 
 public class BatDroid extends Droid {
 

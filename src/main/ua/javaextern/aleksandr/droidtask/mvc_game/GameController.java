@@ -1,6 +1,6 @@
-package ua.javaextern.aleksandr.droidtask.mvc_game;
+package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
-import ua.javaextern.aleksandr.droidtask.droid.Droid;
+import main.ua.javaextern.aleksandr.droidtask.droid.Droid;
 
 import java.util.Scanner;
 

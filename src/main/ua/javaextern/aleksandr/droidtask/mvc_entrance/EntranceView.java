@@ -1,4 +1,4 @@
-package ua.javaextern.aleksandr.droidtask.mvc_entrance;
+package main.ua.javaextern.aleksandr.droidtask.mvc_entrance;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -45,23 +45,23 @@ public class EntranceView {
     }
 
 
-    public void print(String message){
+    private void print(String message){
         System.out.println(message);
     }
 
-    public void printGuestStatusRequest() {
+    void printGuestStatusRequest() {
         print(bundle.getString(GUEST_STATUS_REQUEST));
     }
 
-    public void printLoginPasswordRequest() {
+    void printLoginPasswordRequest() {
         print(bundle.getString(GUEST_PASSWORD_REQUEST));
     }
 
-    public void printWrongPassword() {
+    void printWrongPassword() {
         print(bundle.getString(WRONG_PASSWORD));
     }
 
-    public void printInvalidPasswordFormat() {
+    void printInvalidPasswordFormat() {
         print(bundle.getString(INVALID_PASSWORD_FORMAT));
     }
 }
