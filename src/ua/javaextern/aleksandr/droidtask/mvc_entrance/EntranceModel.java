@@ -52,7 +52,6 @@ public class EntranceModel {
         if (matcher.matches()) {
             return true;
         }
-        System.out.println("Wrong format");
         return false;
     }
 }

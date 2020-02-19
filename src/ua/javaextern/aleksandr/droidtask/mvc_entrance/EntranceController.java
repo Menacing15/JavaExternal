@@ -35,10 +35,9 @@ public class EntranceController {
 
     private String getPassword(BufferedReader terminalReader) throws IOException {
         String password;
-        do {
-            password = terminalReader.readLine();
+        while (!model.checkPasswordRegularity(password = terminalReader.readLine())){
+            view.printInvalidPasswordFormat();
         }
-        while (!model.checkPasswordRegularity(password));
         return password;
     }
 }

@@ -15,7 +15,8 @@ public class EntranceView {
 
     private static final String GUEST_STATUS_REQUEST = "input.guest.status";
     private static final String GUEST_PASSWORD_REQUEST = "input.guest.password";
-    private static final String WRONG_PASSWORD_MESSAGE = "input.wrong.password";
+    private static final String INVALID_PASSWORD_FORMAT = "input.bad.format";
+    private static final String WRONG_PASSWORD = "input.wrong.password";
 
     public void setUp() {
         Scanner scanner = new Scanner(System.in);
@@ -57,6 +58,10 @@ public class EntranceView {
     }
 
     public void printWrongPassword() {
-        print(bundle.getString(WRONG_PASSWORD_MESSAGE));
+        print(bundle.getString(WRONG_PASSWORD));
+    }
+
+    public void printInvalidPasswordFormat() {
+        print(bundle.getString(INVALID_PASSWORD_FORMAT));
     }
 }
