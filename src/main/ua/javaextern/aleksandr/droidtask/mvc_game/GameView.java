@@ -1,6 +1,7 @@
-package ua.javaextern.aleksandr.droidtask.mvc_game;
+package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
-import ua.javaextern.aleksandr.droidtask.droid.Droid;
+import main.ua.javaextern.aleksandr.droidtask.droid.Droid;
+import main.ua.javaextern.aleksandr.droidtask.mvc_entrance.EntranceView;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -10,7 +11,7 @@ public class GameView {
     private static final String MESSAGES_BUNDLE_NAME = "property/game_messages/text";
 
     private ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
-            new Locale(""));
+            new Locale(EntranceView.getLANGUAGE()));
 
     private static final String SPACE_SIGN = " ";
     private static final String COMMA_SIGN = ",";
@@ -25,37 +26,37 @@ public class GameView {
     private static final String END_BATTLE = "input.battle.end";
 
 
-    public void print(String message){
+    void print(String message){
         System.out.println(message);
     }
 
-    public void printGreetings(){
+    void printGreetings(){
         print(bundle.getString(GREETINGS));
     }
 
-    public void printSecondNumberRequest(){
+    void printSecondNumberRequest(){
         print(bundle.getString(SECOND_NUMBER_REQUEST));
     }
 
-    public void printDroidList(){
+    void printDroidList(){
         print(bundle.getString(DROIDS_LIST));
     }
 
-    public void printChosenDroidNames(Droid firstFighter, Droid secondFighter){
+    void printChosenDroidNames(Droid firstFighter, Droid secondFighter){
         print(bundle.getString(DROID_NAMES_ANNOUNCEMENT) +
                 SPACE_SIGN + firstFighter.getName() + COMMA_SIGN +
                 SPACE_SIGN + secondFighter.getName() + NEXT_LINE);
     }
 
-    public void printAttackMove(Droid droid){
+    void printAttackMove(Droid droid){
         print(droid.getName() + SPACE_SIGN + bundle.getString(DROID_ATTACK_MOVE));
     }
-    public void printDroidParameters(Droid droid){
+    void printDroidParameters(Droid droid){
         print(droid.getName() + SPACE_SIGN + bundle.getString(DROID_PARAMETERS) + SPACE_SIGN +
                 droid.getArmorValue() + SPACE_SIGN + droid.getHealthValue());
     }
 
-    public void printEndBattle(Droid droid){
+    void printEndBattle(Droid droid){
         print(bundle.getString(END_BATTLE) + SPACE_SIGN + droid.getName());
     }
 }

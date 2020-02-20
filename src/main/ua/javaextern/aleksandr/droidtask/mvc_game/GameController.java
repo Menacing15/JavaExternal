@@ -1,6 +1,6 @@
-package ua.javaextern.aleksandr.droidtask.mvc_game;
+package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
-import ua.javaextern.aleksandr.droidtask.droid.Droid;
+import main.ua.javaextern.aleksandr.droidtask.droid.Droid;
 
 import java.util.Scanner;
 
@@ -19,15 +19,17 @@ public class GameController {
         gameView.printGreetings();
         gameView.printDroidList();
 
-        Droid firstFighter = gameModel.chooseDroid(scanner);
+        Droid firstFighter = gameModel.chooseDroid();
         gameView.printSecondNumberRequest();
-        Droid secondFighter = gameModel.chooseDroid(scanner);
+        Droid secondFighter = gameModel.chooseDroid();
 
         gameView.printChosenDroidNames(firstFighter,secondFighter);
 
         while(firstFighter.isAlive() && secondFighter.isAlive()){
-            Droid attackingDroid = gameModel.getRandomAttackingDroid(firstFighter, secondFighter);
-            Droid defendingDroid = gameModel.getDefendingDroid(attackingDroid, firstFighter, secondFighter);
+            Droid attackingDroid = gameModel
+                    .getRandomAttackingDroid(firstFighter, secondFighter);
+            Droid defendingDroid = gameModel
+                    .getDefendingDroid(attackingDroid, firstFighter, secondFighter);
             attackingDroid.attackMove(defendingDroid);
             gameView.printAttackMove(attackingDroid);
             gameView.printDroidParameters(firstFighter);

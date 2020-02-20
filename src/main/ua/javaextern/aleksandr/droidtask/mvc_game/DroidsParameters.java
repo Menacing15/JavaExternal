@@ -1,4 +1,4 @@
-package ua.javaextern.aleksandr.droidtask.mvc_game;
+package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
 public interface DroidsParameters {
     String BAT_DROID_NAME = "Bat Droid";
