@@ -5,9 +5,6 @@ import ua.javaextern.aleksandr.droidtask.Guest;
 import ua.javaextern.aleksandr.droidtask.User;
 
 import java.io.*;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
