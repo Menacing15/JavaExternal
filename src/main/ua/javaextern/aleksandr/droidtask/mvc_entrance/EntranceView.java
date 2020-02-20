@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class EntranceView {
 
     private static final String MESSAGES_BUNDLE_NAME = "property/terminal_messages/text";
-
     public static String getLANGUAGE() {
         return LANGUAGE;
     }
+
+
 
     private ResourceBundle bundle;
 
@@ -19,11 +20,13 @@ public class EntranceView {
     private static final String NEXT_LINE = "\n";
 
     private static final String GUEST_STATUS_REQUEST = "input.guest.status";
+    private static final String SIGN_IN_OR_SIGN_UP = "input.sign.in.up";
+    private static final String NEW_PASSWORD_REQUEST = "input.new.password";
     private static final String GUEST_PASSWORD_REQUEST = "input.guest.password";
     private static final String INVALID_PASSWORD_FORMAT = "input.bad.format";
     private static final String WRONG_PASSWORD = "input.wrong.password";
 
-    public void setUp() {
+    public void setUpLanguage() {
         Scanner scanner = new Scanner(System.in);
         print("1 - english, 2 - русский");
         while(!scanner.hasNextInt()){
@@ -54,7 +57,7 @@ public class EntranceView {
         System.out.println(message);
     }
 
-    void printGuestStatusRequest() {
+    void printStatusRequest() {
         print(bundle.getString(GUEST_STATUS_REQUEST));
     }
 
@@ -68,5 +71,11 @@ public class EntranceView {
 
     void printInvalidPasswordFormat() {
         print(bundle.getString(INVALID_PASSWORD_FORMAT));
+    }
+
+    void printSignInOrSignUp() { print(bundle.getString(SIGN_IN_OR_SIGN_UP)); }
+
+    public void printNewPasswordRequest() {
+        print(bundle.getString(NEW_PASSWORD_REQUEST));
     }
 }

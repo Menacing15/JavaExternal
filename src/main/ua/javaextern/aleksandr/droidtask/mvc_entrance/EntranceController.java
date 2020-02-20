@@ -17,25 +17,35 @@ public class EntranceController {
     }
 
     public void process() throws IOException {
-        BufferedReader terminalReader = new BufferedReader(new InputStreamReader(System.in));
-        view.setUp();
-        view.printGuestStatusRequest();
-        Guest guest = model.getGuestStatus(terminalReader);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        view.setUpLanguage();
+        view.printStatusRequest();
+        Guest guest = model.getGuestStatus(reader);
+        view.printSignInOrSignUp();
+        if(model.getEntranceType(reader).equals("sign up")){
+            view.printNewPasswordRequest();
+            model.registerNewUser(guest, getRightPasswordFormat(reader));
+        }
         view.printLoginPasswordRequest();
+        validatePassword(reader, guest);
+    }
+
+
+    private void validatePassword(BufferedReader reader, Guest guest) throws IOException {
         String password;
         while(true) {
-            password = getPassword(terminalReader);
+            password = getRightPasswordFormat(reader);
             if (model.isPasswordValid(guest, password)) {
                 break;
             }
             view.printWrongPassword();
         }
-
     }
 
-    private String getPassword(BufferedReader terminalReader) throws IOException {
+    private String getRightPasswordFormat(BufferedReader terminalReader) throws IOException {
         String password;
-        while (!model.checkPasswordRegularity(password = terminalReader.readLine())){
+        while (!model.isPasswordRegular(password = terminalReader.readLine())){
             view.printInvalidPasswordFormat();
         }
         return password;
