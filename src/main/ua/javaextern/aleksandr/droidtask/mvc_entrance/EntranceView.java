@@ -7,9 +7,14 @@ import java.util.Scanner;
 public class EntranceView {
 
     private static final String MESSAGES_BUNDLE_NAME = "property/terminal_messages/text";
-    private static String LANGUAGE = "";
+
+    public static String getLANGUAGE() {
+        return LANGUAGE;
+    }
+
     private ResourceBundle bundle;
 
+    private static String LANGUAGE = "";
     private static final String SPACE_SIGN = " ";
     private static final String NEXT_LINE = "\n";
 
@@ -26,6 +31,7 @@ public class EntranceView {
             scanner.next();
         }
         setLanguage(scanner.nextInt());
+        setBundle();
     }
 
     private void setLanguage(int i) {
@@ -37,7 +43,6 @@ public class EntranceView {
                 LANGUAGE = "ru";
                 break;
         }
-        setBundle();
     }
 
     private void setBundle() {

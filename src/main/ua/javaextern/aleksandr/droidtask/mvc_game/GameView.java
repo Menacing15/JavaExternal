@@ -1,6 +1,7 @@
 package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
 import main.ua.javaextern.aleksandr.droidtask.droid.Droid;
+import main.ua.javaextern.aleksandr.droidtask.mvc_entrance.EntranceView;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -10,7 +11,7 @@ public class GameView {
     private static final String MESSAGES_BUNDLE_NAME = "property/game_messages/text";
 
     private ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
-            new Locale(""));
+            new Locale(EntranceView.getLANGUAGE()));
 
     private static final String SPACE_SIGN = " ";
     private static final String COMMA_SIGN = ",";

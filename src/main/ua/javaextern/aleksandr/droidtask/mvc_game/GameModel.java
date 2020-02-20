@@ -9,7 +9,8 @@ import static main.ua.javaextern.aleksandr.droidtask.mvc_game.DroidsParameters.*
 
 public class GameModel {
 
-    Droid chooseDroid(Scanner scanner){
+    Droid chooseDroid(){
+        Scanner scanner = new Scanner(System.in);
         while(!scanner.hasNextInt()) {
             scanner.next();
         }
