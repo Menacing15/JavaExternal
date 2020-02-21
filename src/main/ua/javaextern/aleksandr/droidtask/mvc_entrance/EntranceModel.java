@@ -23,12 +23,7 @@ public class EntranceModel {
     }
 
     boolean isPasswordValid(Guest guest, String password) throws IOException {
-        File file;
-        if (guest instanceof Admin) {
-            file = new File("src\\property\\terminal_messages\\admin_passwords.txt");
-        } else {
-            file = new File("src\\property\\terminal_messages\\user_passwords.txt");
-        }
+        File file = getFile(guest);
         BufferedReader fileReader = new BufferedReader(new FileReader(file.getAbsolutePath()));
         String line;
         while ((line = fileReader.readLine()) != null) {
@@ -48,7 +43,26 @@ public class EntranceModel {
         return matcher.matches();
     }
 
-     String getEntranceType(BufferedReader reader) throws IOException {
+    void registerNewUser(Guest guest, String password) throws IOException {
+        File file = getFile(guest);
+        BufferedWriter fileWriter = new BufferedWriter(new FileWriter
+                (file.getAbsolutePath(),true));
+        fileWriter.newLine();
+        fileWriter.write(password);
+        fileWriter.close();
+    }
+
+    private File getFile(Guest guest) {
+        File file;
+        if (guest instanceof Admin) {
+            file = new File("src\\property\\passwords\\admin_passwords.txt");
+        } else {
+            file = new File("src\\property\\passwords\\user_passwords.txt");
+        }
+        return file;
+    }
+
+    String getEntranceType(BufferedReader reader) throws IOException {
         String input;
         while(true) {
             input = reader.readLine();
@@ -56,18 +70,5 @@ public class EntranceModel {
                 return input;
             }
         }
-    }
-
-    void registerNewUser(Guest guest, String password) throws IOException {
-        File file;
-        if (guest instanceof Admin) {
-            file = new File("src\\property\\terminal_messages\\admin_passwords.txt");
-        } else {
-            file = new File("src\\property\\terminal_messages\\user_passwords.txt");
-        }
-        BufferedWriter fileWriter = new BufferedWriter(new FileWriter(file.getAbsolutePath(),true));
-        fileWriter.newLine();
-        fileWriter.write(password);
-        fileWriter.close();
     }
 }
