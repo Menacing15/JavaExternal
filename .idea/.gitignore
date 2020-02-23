@@ -1,2 +1,6 @@
 # Default ignored files
 /workspace.xml
+/.idea/
+/encodings.xml
+/misc.xml
+/uiDesigner.xml
