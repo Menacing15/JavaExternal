@@ -1,5 +1,5 @@
-package ua.javaextern.aleksandr.droidtask.strategy;
-import ua.javaextern.aleksandr.droidtask.droid.Droid;
+package main.ua.javaextern.aleksandr.droidtask.strategy;
+import main.ua.javaextern.aleksandr.droidtask.droid.Droid;
 
 public class SimpleAttackStrategy implements AttackStrategy {
 

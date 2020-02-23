@@ -1,15 +1,16 @@
-package ua.javaextern.aleksandr.droidtask.mvc;
+package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
-import ua.javaextern.aleksandr.droidtask.droid.*;
+import main.ua.javaextern.aleksandr.droidtask.droid.*;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import static ua.javaextern.aleksandr.droidtask.mvc.DroidsParameters.*;
+import static main.ua.javaextern.aleksandr.droidtask.mvc_game.DroidsParameters.*;
 
-public class Model {
+public class GameModel {
 
-    public Droid chooseDroid(Scanner scanner){
+    Droid chooseDroid(){
+        Scanner scanner = new Scanner(System.in);
         while(!scanner.hasNextInt()) {
             scanner.next();
         }
@@ -26,7 +27,7 @@ public class Model {
         }
     }
 
-    public Droid getRandomAttackingDroid(Droid firstFighter, Droid secondFighter) {
+    Droid getRandomAttackingDroid(Droid firstFighter, Droid secondFighter) {
         int fortuitousMotion = new Random().nextInt() % 2;
         if(fortuitousMotion == 0){
             return firstFighter;
@@ -35,7 +36,7 @@ public class Model {
         }
     }
 
-    public Droid getDefendingDroid(Droid attackingDroid, Droid firstFighter, Droid secondFighter) {
+    Droid getDefendingDroid(Droid attackingDroid, Droid firstFighter, Droid secondFighter) {
         if(attackingDroid.equals(firstFighter)){
             return secondFighter;
         }else{
@@ -43,7 +44,7 @@ public class Model {
         }
     }
 
-    public Droid getWinnerDroid(Droid firstFighter, Droid secondFighter){
+    Droid getWinnerDroid(Droid firstFighter, Droid secondFighter){
         if(firstFighter.getHealthValue() > 0){
             return firstFighter;
         }else{
