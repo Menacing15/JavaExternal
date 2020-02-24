@@ -2,8 +2,6 @@ package main.ua.javaextern.aleksandr.droidtask.mvc_game;
 
 import main.ua.javaextern.aleksandr.droidtask.droid.Droid;
 
-import java.util.Scanner;
-
 public class GameController {
     private GameModel gameModel;
     private GameView gameView;
@@ -13,9 +11,7 @@ public class GameController {
         this.gameView = gameView;
     }
 
-    public void startDroidBattle(){
-        Scanner scanner = new Scanner(System.in);
-
+    public void process(){
         gameView.printGreetings();
         gameView.printDroidList();
 
@@ -25,7 +21,16 @@ public class GameController {
 
         gameView.printChosenDroidNames(firstFighter,secondFighter);
 
-        while(firstFighter.isAlive() && secondFighter.isAlive()){
+        try{
+            processFight(firstFighter, secondFighter);
+        }catch(DroidDeadException ex){
+            Droid winnerDroid = gameModel.getWinnerDroid(firstFighter, secondFighter);
+            gameView.printEndBattle(winnerDroid);
+        }
+    }
+
+    private void processFight(Droid firstFighter, Droid secondFighter) throws DroidDeadException {
+        while(true){
             Droid attackingDroid = gameModel
                     .getRandomAttackingDroid(firstFighter, secondFighter);
             Droid defendingDroid = gameModel
@@ -40,8 +45,9 @@ public class GameController {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            if(!firstFighter.isAlive() || !secondFighter.isAlive()){
+                throw new DroidDeadException();
+            }
         }
-        Droid winnerDroid = gameModel.getWinnerDroid(firstFighter, secondFighter);
-        gameView.printEndBattle(winnerDroid);
     }
 }

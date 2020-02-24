@@ -21,6 +21,6 @@ public class Main {
         GameModel gameModel = new GameModel();
         GameView gameView = new GameView();
         GameController gameController = new GameController(gameModel, gameView);
-        gameController.startDroidBattle();
+        gameController.process();
     }
 }
