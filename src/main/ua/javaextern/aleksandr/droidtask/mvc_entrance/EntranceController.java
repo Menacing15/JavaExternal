@@ -1,6 +1,6 @@
 package main.ua.javaextern.aleksandr.droidtask.mvc_entrance;
 
-import main.ua.javaextern.aleksandr.droidtask.Guest;
+import main.ua.javaextern.aleksandr.droidtask.guest.Guest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
