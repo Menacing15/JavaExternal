@@ -1,8 +1,8 @@
 package main.ua.javaextern.aleksandr.droidtask.mvc_entrance;
 
-import main.ua.javaextern.aleksandr.droidtask.Admin;
-import main.ua.javaextern.aleksandr.droidtask.Guest;
-import main.ua.javaextern.aleksandr.droidtask.User;
+import main.ua.javaextern.aleksandr.droidtask.guest.Admin;
+import main.ua.javaextern.aleksandr.droidtask.guest.Guest;
+import main.ua.javaextern.aleksandr.droidtask.guest.User;
 
 import java.io.*;
 import java.util.regex.Matcher;
@@ -54,10 +54,13 @@ public class EntranceModel {
 
     private File getFile(Guest guest) {
         File file;
+        String s  = File.separator;
         if (guest instanceof Admin) {
-            file = new File("src\\property\\passwords\\admin_passwords.txt");
+            file = new File("src" + s + "property" + s + "passwords"+
+                    s +"admin_passwords.txt");
         } else {
-            file = new File("src\\property\\passwords\\user_passwords.txt");
+            file = new File("src" + s + "property" + s + "passwords"+
+                    s +"user_passwords.txt");
         }
         return file;
     }
