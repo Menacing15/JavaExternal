@@ -55,14 +55,12 @@ public class EntranceModel {
     private File getFile(Guest guest) {
         File file;
         String s  = File.separator;
+        String path = "src" + s + "main" + s + "java" + s +
+                "property" + s + "passwords"+ s;
         if (guest instanceof Admin) {
-            file = new File("src" + s + "main" + s + "java" + s +
-                    "property" + s + "passwords"+
-                    s +"admin_passwords.txt");
+            file = new File(path + "admin_passwords.txt");
         } else {
-            file = new File("src" + s + "main" + s + "java" + s +
-                    "property" + s + "passwords"+
-                    s +"user_passwords.txt");
+            file = new File(path +"user_passwords.txt");
         }
         return file;
     }

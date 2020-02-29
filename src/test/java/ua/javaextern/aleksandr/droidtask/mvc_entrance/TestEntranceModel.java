@@ -5,7 +5,7 @@ import org.junit.Test;
 public class TestEntranceModel {
 
     @Test
-    void getGuestStatus(){
+    public void getGuestStatus(){
 
     }
 

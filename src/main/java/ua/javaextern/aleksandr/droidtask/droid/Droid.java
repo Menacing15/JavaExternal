@@ -10,6 +10,10 @@ public abstract class Droid {
     private String name;
     private AttackStrategy attackStrategy;
 
+    public Droid(){
+
+    }
+
     public Droid(String name, int attackValue, int armorValue, int healthValue, AttackStrategy attackStrategy) {
         this.name = name;
         this.attackValue = attackValue;
