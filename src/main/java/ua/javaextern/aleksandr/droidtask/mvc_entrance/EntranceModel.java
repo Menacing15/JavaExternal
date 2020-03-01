@@ -10,7 +10,9 @@ import java.util.regex.Pattern;
 
 public class EntranceModel {
 
-    Guest getGuestStatus(BufferedReader reader) throws IOException {
+    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    Guest getGuestStatus() throws IOException {
         String status;
         while (true) {
             status = reader.readLine();
@@ -45,8 +47,8 @@ public class EntranceModel {
 
     void registerNewUser(Guest guest, String password) throws IOException {
         File file = getFile(guest);
-        BufferedWriter fileWriter = new BufferedWriter(new FileWriter
-                (file.getAbsolutePath(),true));
+        BufferedWriter fileWriter = new BufferedWriter(new FileWriter(
+                file.getAbsolutePath(),true));
         fileWriter.newLine();
         fileWriter.write(password);
         fileWriter.close();
@@ -65,7 +67,7 @@ public class EntranceModel {
         return file;
     }
 
-    String getEntranceType(BufferedReader reader) throws IOException {
+    String getEntranceType() throws IOException {
         String input;
         while(true) {
             input = reader.readLine();

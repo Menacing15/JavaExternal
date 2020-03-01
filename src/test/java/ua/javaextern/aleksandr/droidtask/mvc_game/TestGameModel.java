@@ -13,14 +13,11 @@ import static org.junit.Assert.assertTrue;
 public class TestGameModel {
 
     private GameModel model;
-    private GameView view;
-
     private ConfigurableInputStream in;
 
     @Before
     public void setup(){
         model = new GameModel();
-        view = new GameView();
         in = new ConfigurableInputStream();
 
         System.setIn(in);
