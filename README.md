@@ -1,9 +1,13 @@
 ## javaexternal
-**This is repo for university programm small tasks**<br>
+**Droids**<br>
 <img width = "200" height = "200" src = "https://avatars1.githubusercontent.com/u/40790300?s=460&v=4">
 <br><br>
 ### Links
-* Task 0: [Create repository](https://github.com/Menacing15/JavaExternal).
-* Task 1: [Teamed poem writting](https://github.com/Menacing15/JavaExternal02)
-* Task 2: [MVC gaming java](https://github.com/Menacing15/mvcjavagame/tree/master/src/ua/javaexternal/alexander/game)
-* Task 3: [Droids](https://github.com/Menacing15/javaexternal/tree/master/src)
+* Task 1: [Droid war OOP](https://github.com/Menacing15/javaexternal/tree/master/src/main/java/ua/javaextern/aleksandr/droidtask/droid).
+* Task 2: [Droid war MVC](https://github.com/Menacing15/javaexternal/tree/master/src/main/java/ua/javaextern/aleksandr/droidtask/mvc_game)
+* Task 3: [Droid war with pattern strategy and factory](https://github.com/Menacing15/javaexternal/tree/master/src/main/java/ua/javaextern/aleksandr/droidtask/strategy)
+* Task 4: [Registration](https://github.com/Menacing15/javaexternal/tree/master/src/main/java/ua/javaextern/aleksandr/droidtask/mvc_entrance)
+* Task 5: [JUnit Test](https://github.com/Menacing15/javaexternal/tree/master/src/test/java/ua/javaextern/aleksandr/droidtask)
+* Task 6: [Find by parameters] - 
+* Task 7: [Serialize](https://github.com/Menacing15/javaexternal/blob/master/src/main/java/ua/javaextern/aleksandr/droidtask/Serializator.java)
+* Task 8: [Log4j and Exception](https://github.com/Menacing15/javaexternal/tree/master/src/main/java/property)
