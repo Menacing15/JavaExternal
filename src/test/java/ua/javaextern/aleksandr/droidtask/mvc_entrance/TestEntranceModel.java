@@ -69,7 +69,7 @@ public class TestEntranceModel {
     @Test
     public void getFileUser(){
         String filepath = model.getFile(new User()).getPath();
-        assertEquals("src\\main\\java\\property\\passwords\\admin_passwords.txt", filepath);
+        assertEquals("src\\main\\java\\property\\passwords\\user_passwords.txt", filepath);
     }
     @Ignore
     public void getEntranceTypeSignInCase() throws IOException {

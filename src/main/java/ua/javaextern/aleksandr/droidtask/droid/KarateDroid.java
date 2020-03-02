@@ -1,15 +1,12 @@
 package ua.javaextern.aleksandr.droidtask.droid;
 
-import ua.javaextern.aleksandr.droidtask.strategy.SimpleAttackStrategy;
+import static ua.javaextern.aleksandr.droidtask.mvc_game.DroidsParameters.*;
 
 public class KarateDroid extends Droid{
 
     public KarateDroid(){
-
-    }
-
-    public KarateDroid(String name, int attack, int armor, int health) {
-        super(name, attack, armor, health,new SimpleAttackStrategy());
+        super(KARATE_DROID_NAME, KARATE_DROID_ATTACK, KARATE_DROID_ARMOR,
+                KARATE_DROID_HEALTH, KARATE_DROID_ATTACK_STRATEGY);
     }
 
     @Override

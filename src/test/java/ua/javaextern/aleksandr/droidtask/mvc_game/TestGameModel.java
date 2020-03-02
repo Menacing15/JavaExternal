@@ -57,8 +57,11 @@ public class TestGameModel {
     }
     @Test
     public void getWinnerDroid(){
-        Droid winnerDroid = new BatDroid("winner",1,1,1);
-        Droid loserDroid = new PizzaDroid("loser",1,1,0);
+        Droid winnerDroid = new BatDroid();
+        Droid loserDroid = new PizzaDroid();
+        while(loserDroid.getHealthValue() > 0) {
+            winnerDroid.attackMove(loserDroid);
+        }
         assertTrue(model.getWinnerDroid(winnerDroid,loserDroid) instanceof BatDroid);
     }
 

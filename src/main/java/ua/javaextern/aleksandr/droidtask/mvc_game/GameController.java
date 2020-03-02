@@ -41,7 +41,7 @@ public class GameController {
             gameView.printDroidParameters(secondFighter);
             gameView.print("\n");
             try {
-                Thread.sleep(4000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

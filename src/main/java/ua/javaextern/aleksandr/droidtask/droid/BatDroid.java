@@ -1,15 +1,12 @@
 package ua.javaextern.aleksandr.droidtask.droid;
 
-import ua.javaextern.aleksandr.droidtask.strategy.SimpleAttackStrategy;
+import static ua.javaextern.aleksandr.droidtask.mvc_game.DroidsParameters.*;
 
 public class BatDroid extends Droid {
 
     public BatDroid(){
-
-    }
-
-    public BatDroid(String name, int attack, int armor, int health) {
-        super(name, attack, armor, health,new SimpleAttackStrategy());
+        super(BAT_DROID_NAME, BAT_DROID_ATTACK, BAT_DROID_ARMOR,
+                BAT_DROID_HEALTH, BAT_DROID_ATTACK_STRATEGY);
     }
 
     @Override
