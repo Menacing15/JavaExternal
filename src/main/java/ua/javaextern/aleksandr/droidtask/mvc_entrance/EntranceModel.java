@@ -54,7 +54,7 @@ public class EntranceModel {
         fileWriter.close();
     }
 
-    private File getFile(Guest guest) {
+     File getFile(Guest guest) {
         File file;
         String s  = File.separator;
         String path = "src" + s + "main" + s + "java" + s +

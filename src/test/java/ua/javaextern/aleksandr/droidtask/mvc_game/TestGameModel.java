@@ -42,18 +42,24 @@ public class TestGameModel {
         assertTrue(testDroid instanceof KarateDroid);
     }
     @Test
-    public void getRandomAttackingDroidTest(){
+    public void getRandomAttackingDroid(){
         Droid randomDroid = model.getRandomAttackingDroid(new KarateDroid(),new BatDroid());
         assertTrue(randomDroid instanceof KarateDroid || randomDroid instanceof BatDroid);
     }
     @Test
-    public void getDefendingDroidTest(){
+    public void getDefendingDroid(){
         Droid karateDroid = new KarateDroid();
         Droid batDroid = new BatDroid();
         Droid attackingDroid = karateDroid;
         Droid defendingDroid = model.getDefendingDroid(karateDroid,batDroid,attackingDroid);
 
         assertTrue(defendingDroid instanceof BatDroid);
+    }
+    @Test
+    public void getWinnerDroid(){
+        Droid winnerDroid = new BatDroid("winner",1,1,1);
+        Droid loserDroid = new PizzaDroid("loser",1,1,0);
+        assertTrue(model.getWinnerDroid(winnerDroid,loserDroid) instanceof BatDroid);
     }
 
 }

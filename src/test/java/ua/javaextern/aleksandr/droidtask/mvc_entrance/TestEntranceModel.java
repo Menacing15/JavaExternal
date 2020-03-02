@@ -8,11 +8,11 @@ import ua.javaextern.aleksandr.droidtask.guest.Admin;
 import ua.javaextern.aleksandr.droidtask.guest.Guest;
 import ua.javaextern.aleksandr.droidtask.guest.User;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestEntranceModel {
 
@@ -28,8 +28,8 @@ public class TestEntranceModel {
     }
     @Ignore
     public void getGuestStatus() throws IOException {
-        in.add("admin");                              //TODO proper test, BufferedReader doesnt read from ConfigurableInputStream
-        Guest guest = model.getGuestStatus();
+        in.add("admin");                              //TODO proper test, BufferedReader
+        Guest guest = model.getGuestStatus();         // doesnt read from ConfigurableInputStream
         assertTrue(guest instanceof Admin);
     }
     @Test
@@ -60,6 +60,26 @@ public class TestEntranceModel {
         String newPassword = "new:password";
         model.registerNewUser(guest,newPassword);
         assertTrue(model.isPasswordValid(guest, newPassword));
+    }
+    @Test
+    public void getFileAdmin(){
+        String filepath = model.getFile(new Admin()).getPath();
+        assertEquals("src\\main\\java\\property\\passwords\\admin_passwords.txt", filepath);
+    }
+    @Test
+    public void getFileUser(){
+        String filepath = model.getFile(new User()).getPath();
+        assertEquals("src\\main\\java\\property\\passwords\\admin_passwords.txt", filepath);
+    }
+    @Ignore
+    public void getEntranceTypeSignInCase() throws IOException {
+        String input = model.getEntranceType();                  //TODO proper test, BufferedReader
+        assertEquals("sign in", input);
+    }
+    @Ignore
+    public void getEntranceTypeSignUpCase() throws IOException {
+        String input = model.getEntranceType();                  //TODO proper test, BufferedReader
+        assertEquals("sign up", input);
     }
 
 }
