@@ -8,9 +8,7 @@ import ua.javaextern.aleksandr.droidtask.guest.Admin;
 import ua.javaextern.aleksandr.droidtask.guest.Guest;
 import ua.javaextern.aleksandr.droidtask.guest.User;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
