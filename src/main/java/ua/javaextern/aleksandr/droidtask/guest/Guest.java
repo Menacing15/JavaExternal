@@ -1,5 +1,8 @@
 package ua.javaextern.aleksandr.droidtask.guest;
 
-public interface Guest {
+import java.io.Serializable;
 
+public abstract class Guest implements Serializable {
+
+    public abstract void processUser();
 }

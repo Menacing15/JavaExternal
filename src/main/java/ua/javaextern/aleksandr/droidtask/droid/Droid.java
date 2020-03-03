@@ -2,7 +2,9 @@ package ua.javaextern.aleksandr.droidtask.droid;
 
 import ua.javaextern.aleksandr.droidtask.strategy.AttackStrategy;
 
-public abstract class Droid {
+import java.io.Serializable;
+
+public abstract class Droid implements Serializable {
 
     private int attackValue;
     private int armorValue;

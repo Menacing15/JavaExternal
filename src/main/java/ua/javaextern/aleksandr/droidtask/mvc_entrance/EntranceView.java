@@ -11,11 +11,11 @@ public class EntranceView {
         return LANGUAGE;
     }
 
+
+
     private ResourceBundle bundle;
 
     private static String LANGUAGE = "";
-    private static final String SPACE_SIGN = " ";
-    private static final String NEXT_LINE = "\n";
 
     private static final String GUEST_STATUS_REQUEST = "input.guest.status";
     private static final String SIGN_IN_OR_SIGN_UP = "input.sign.in.up";
@@ -23,6 +23,10 @@ public class EntranceView {
     private static final String GUEST_PASSWORD_REQUEST = "input.guest.password";
     private static final String INVALID_PASSWORD_FORMAT = "input.bad.format";
     private static final String WRONG_PASSWORD = "input.wrong.password";
+    private static final String GREETINGS_FOR_ADMIN = "input.admin.greetings";
+    private static final String GREETINGS_FOR_USER = "input.user.greetings";
+    private static final String ADMIN_COMMANDS = "admin.commands";
+    private static final String USER_COMMANDS = "user.commands";
 
     public void setUpLanguage() {
         Scanner scanner = new Scanner(System.in);
@@ -75,5 +79,15 @@ public class EntranceView {
 
     public void printNewPasswordRequest() {
         print(bundle.getString(NEW_PASSWORD_REQUEST));
+    }
+
+    public void printGreetingsAndCommandsForAdmin() {
+        print(bundle.getString(GREETINGS_FOR_ADMIN));
+        print(bundle.getString(ADMIN_COMMANDS));
+    }
+
+    public void printGreetingsAndCommandsForUser() {
+        print(bundle.getString(GREETINGS_FOR_USER));
+        print(bundle.getString(USER_COMMANDS));
     }
 }

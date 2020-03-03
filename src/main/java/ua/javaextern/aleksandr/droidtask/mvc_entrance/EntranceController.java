@@ -1,8 +1,10 @@
 package ua.javaextern.aleksandr.droidtask.mvc_entrance;
 
+import ua.javaextern.aleksandr.droidtask.Serializator;
 import ua.javaextern.aleksandr.droidtask.guest.Guest;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -29,6 +31,8 @@ public class EntranceController {
         }
         view.printLoginPasswordRequest();
         validatePassword(guest);
+        new Serializator().serialize(guest,"src" + File.separator + "main" + File.separator + "java"
+                + File.separator + "property" + File.separator + "serialized" + File.separator + "guest.ser");
     }
 
 

@@ -1,7 +1,9 @@
 package ua.javaextern.aleksandr.droidtask.strategy;
 import ua.javaextern.aleksandr.droidtask.droid.Droid;
 
-public class SimpleAttackStrategy implements AttackStrategy {
+import java.io.Serializable;
+
+public class SimpleAttackStrategy implements AttackStrategy, Serializable {
 
     @Override
     public void attack(Droid droid, int attackValue) {

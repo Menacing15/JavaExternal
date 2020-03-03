@@ -1,5 +1,11 @@
 package ua.javaextern.aleksandr.droidtask.guest;
 
-public class User implements Guest {
+import java.io.Serializable;
 
+public class User extends Guest implements Serializable {
+
+    @Override
+    public void processUser() {
+
+    }
 }
