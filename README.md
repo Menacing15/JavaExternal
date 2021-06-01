@@ -1,6 +1,4 @@
 ## javaexternal
-**Droids**<br>
-<img width = "200" height = "200" src = "https://www.epam.com/etc/designs/epam-core/images/common/logo.png">
 <br><br>
 ### Links
 * Task 1: [Droid war OOP](https://github.com/Menacing15/javaexternal/tree/master/src/main/java/ua/javaextern/aleksandr/droidtask/droid).
